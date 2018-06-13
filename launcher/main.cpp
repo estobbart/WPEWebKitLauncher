@@ -162,6 +162,8 @@ int main(int argc, char* argv[])
     auto page = WKViewGetPage(view);
     WKPageSetPageNavigationClient(page, &s_navigationClient.base);
 
+    WKPageSetCustomUserAgent(page, WKStringCreateWithUTF8CString("Mozilla/5.0 (iPhone; CPU iPhone OS 11_0 like Mac OS X) AppleWebKit/604.1.38 (KHTML, like Gecko) Version/11.0 Mobile/15A356 Safari/604.1"));
+
     const char* url = "http://youtube.com/tv";
     if (argc > 1)
         url = argv[1];
